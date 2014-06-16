@@ -1,0 +1,44 @@
+{
+  "name": "redirect-rest",
+  "description": "Redirect REST requests to another server",
+  "version": "0.0.1",
+  "homepage": "https://github.com/juanghurtado/redirect-rest",
+  "author": {
+    "name": "Juan G. Hurtado",
+    "email": "juan.g.hurtado@gmail.com",
+    "url": "http://juanghurtado.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juanghurtado/redirect-rest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juanghurtado/redirect-rest/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/juanghurtado/redirect-rest/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/redirect-rest",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "express": "^4.1.1",
+    "http": "0.0.0",
+    "request": "^2.36.0",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+  },
+  "keywords": [],
+  "preferGlobal": "true",
+  "bin": {
+    "redirectrest" : "lib/redirect-rest.js"
+  }
+}
