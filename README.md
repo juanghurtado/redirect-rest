@@ -10,11 +10,6 @@ Redirect REST requests to another server, so you can develop your Javascript app
 - Launch the server with `redirectrest`
 - Open `http://localhost:4242/` and enjoy your redirects!
 
-```
-var redirect_rest = require('redirect-rest');
-redirect_rest.awesome(); // "awesome"
-```
-
 ## Config options
 
 To configure the redirections and everything else for `redirectrest`, create a `.redirect-rest.json` file on the root folder of your application.
