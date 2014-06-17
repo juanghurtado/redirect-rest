@@ -39,6 +39,12 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 
 ASP.NET, PHP and JSP files will be treated as `text/html`.
 
+## TO-DO
+
+- [ ] Implement error forwarding to local server from remote server
+- [ ] Better logging system
+
 ## License
+
 Copyright (c) 2014 Juan G. Hurtado
 Licensed under the MIT license.
