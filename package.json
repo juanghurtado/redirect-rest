@@ -30,7 +30,6 @@
     "body-parser": "^1.0.2",
     "custom-logger": "^0.2.1",
     "express": "^4.1.1",
-    "http": "0.0.0",
     "request": "^2.36.0",
     "underscore": "^1.6.0"
   },
