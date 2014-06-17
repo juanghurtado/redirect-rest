@@ -25,20 +25,19 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "body-parser": "^1.0.2",
+    "custom-logger": "^0.2.1",
     "express": "^4.1.1",
     "http": "0.0.0",
     "request": "^2.36.0",
     "underscore": "^1.6.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [],
   "preferGlobal": "true",
   "bin": {
-    "redirectrest" : "lib/redirect-rest.js"
+    "redirectrest": "lib/redirect-rest.js"
   }
 }

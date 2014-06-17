@@ -42,7 +42,7 @@ ASP.NET, PHP and JSP files will be treated as `text/html`.
 ## TO-DO
 
 - [ ] Implement error forwarding to local server from remote server
-- [ ] Better logging system
+- [x] Better logging system (_v0.0.5_)
 
 ## License
 
