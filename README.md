@@ -19,7 +19,7 @@ Inside this JSON file you can have this options:
 - `public_path`: Path of the assets that will be published on the HTTP server launched by `redirectrest`. Defaults to: `./`
 - `html_extensions`: Array of file extensions which will be treated as `text/html` (just in case you are required to have an HTML file with backend extension: PHP, JSP…). Defaults to: `["jsp", "php", "html"]`
 - `remote_url`: Base URL of the remote server, where the local requests will be redirected. Required.
-- `routes`: Array of routes to be redirected. Defaults to: `[]`
+- `routes`: Array of routes to be redirected. Defaults to: `[]`. If it contains Strings (`["route/one", "route/two"]`), it will redirect it as is. If it contains Objects (`[ { "route/local" : "route/remote" }, { "other/local" : "other/remote" } ]`), it will use the key as the local path for the request, and will redirect it to the value path
 
 For example: Imagine you have a JS app and a REST API service on `http://example.com/api/`, and two routes to listen: `users` and `roles`. Your `.redirect-rest.json` file would be:
 
@@ -39,9 +39,21 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 
 ASP.NET, PHP and JSP files will be treated as `text/html`.
 
+```json
+{
+  "remote_url" : "http://example.com/api",
+  "routes" : [{ "local/path" : "remote/path" }]
+}
+```
+
+This way you'll have your JS app published under `http://localhost:4242/`, and requests will be redirected as follows:
+
+- `http://localhost:4242/local/path` redirects to: `http://example.com/api/remote/path`
+
 ## TO-DO
 
-- [ ] Implement error forwarding to local server from remote server
+- [x] Redirect local requests to different remote path (_v0.0.8_)
+- [x] Implement error forwarding to local server from remote server (_v0.0.7_)
 - [x] Better logging system (_v0.0.5_)
 
 ## License
