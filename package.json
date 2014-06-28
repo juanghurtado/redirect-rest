@@ -1,7 +1,7 @@
 {
   "name": "redirect-rest",
   "description": "Redirect REST requests to another server",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "homepage": "https://github.com/juanghurtado/redirect-rest",
   "author": {
     "name": "Juan G. Hurtado",
