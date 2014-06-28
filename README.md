@@ -52,6 +52,7 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 
 ## TO-DO
 
+- [x] Support querystrings (_v0.0.9_)
 - [x] Redirect local requests to different remote path (_v0.0.8_)
 - [x] Implement error forwarding to local server from remote server (_v0.0.7_)
 - [x] Better logging system (_v0.0.5_)
