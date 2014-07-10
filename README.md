@@ -59,7 +59,7 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 
 ## Acknowledgments
 
-The original idea behind *redirect-rest* was by @drmillan. He was planning on doing something much more simple, and written in some archaic and obscure language as PHP.
+The original idea behind *redirect-rest* was by [@drmillan](http://github.com/drmillan). He was planning on doing something much more simple, and written in some archaic and obscure language as PHP.
 
 I couldn't allow that `\_(ʘ_ʘ)_/`
 
