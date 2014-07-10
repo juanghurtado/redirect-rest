@@ -57,6 +57,12 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 - [x] Implement error forwarding to local server from remote server (_v0.0.7_)
 - [x] Better logging system (_v0.0.5_)
 
+## Acknowledgments
+
+The original idea behind *redirect-rest* was by @drmillan. He was planning on doing something much more simple, and written in some archaic and obscure language as PHP.
+
+I couldn't allow that `\_(ʘ_ʘ)_/`
+
 ## License
 
 Copyright (c) 2014 Juan G. Hurtado
