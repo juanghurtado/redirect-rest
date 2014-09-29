@@ -19,16 +19,14 @@ Inside this JSON file you can have this options:
 - `public_path`: Path of the assets that will be published on the HTTP server launched by `redirectrest`. Defaults to: `./`
 - `html_extensions`: Array of file extensions which will be treated as `text/html` (just in case you are required to have an HTML file with backend extension: PHP, JSP…). Defaults to: `["jsp", "php", "html"]`
 - `remote_url`: Base URL of the remote server, where the local requests will be redirected. Required.
-- `routes`: Array of routes to be redirected. Defaults to: `[]`
 
-For example: Imagine you have a JS app and a REST API service on `http://example.com/api/`, and two routes to listen: `users` and `roles`. Your `.redirect-rest.json` file would be:
+For example: Imagine you have a JS app and a REST API service on `http://example.com/api/`. Your `.redirect-rest.json` file would be:
 
 ```json
 {
   "html_extensions" : ["aspx", "php", "jsp"],
   "public_path" : "./",
-  "remote_url" : "http://example.com/api",
-  "routes" : ["users", "roles"]
+  "remote_url" : "http://example.com/api"
 }
 ```
 
@@ -36,11 +34,13 @@ This way you'll have your JS app published under `http://localhost:4242/`, and r
 
 - `http://localhost:4242/users` redirects to: `http://example.com/api/users`
 - `http://localhost:4242/roles` redirects to: `http://example.com/api/roles`
+- `http://localhost:4242/whatever` redirects to: `http://example.com/api/whatever`
 
 ASP.NET, PHP and JSP files will be treated as `text/html`.
 
 ## TO-DO
 
+- [x] Remove `routes`. Now all requests are redirected to `remote_url` (_v2.0.0_)
 - [x] Remove support for redirections to different remote paths (_v1.0.0_)
 - [x] Support querystrings (_v0.0.9_)
 - [x] Redirect local requests to different remote path (_v0.0.8_)
@@ -49,7 +49,7 @@ ASP.NET, PHP and JSP files will be treated as `text/html`.
 
 ## Acknowledgments
 
-The original idea behind *redirect-rest* was by [@drmillan](http://github.com/drmillan). He was planning on doing something much more simple, and written in some archaic and obscure language as PHP.
+The original idea behind *redirect-rest* was by [@drmillan](http://github.com/drmillan). He was planning on doing something much more simple, and written in some archaic and obscure language such as PHP.
 
 I couldn't allow that `\_(ʘ_ʘ)_/`
 
