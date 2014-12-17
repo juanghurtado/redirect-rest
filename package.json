@@ -31,7 +31,8 @@
     "custom-logger": "^0.2.1",
     "express": "^4.1.1",
     "request": "^2.36.0",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "express-livereload": "^0.0.24"
   },
   "devDependencies": {},
   "keywords": [],
