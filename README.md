@@ -19,6 +19,10 @@ Inside this JSON file you can have this options:
 - `public_path`: Path of the assets that will be published on the HTTP server launched by `redirectrest`. Defaults to: `./`
 - `html_extensions`: Array of file extensions which will be treated as `text/html` (just in case you are required to have an HTML file with backend extension: PHP, JSP…). Defaults to: `["jsp", "php", "html"]`
 - `remote_url`: Base URL of the remote server, where the local requests will be redirected. Required.
+- `port`: Local server port
+- `proxy`: Proxy to be used to make remote server requests
+- `livereload`: Make use of LiveReload to refresh the browser on local changes
+- `livereloadPort`: Port to be used with LiveReload
 
 For example: Imagine you have a JS app and a REST API service on `http://example.com/api/`. Your `.redirect-rest.json` file would be:
 
@@ -40,6 +44,7 @@ ASP.NET, PHP and JSP files will be treated as `text/html`.
 
 ## TO-DO
 
+- [x] Add `port`, `proxy`, `livereload` and `livereloadPort` config options (_v2.1.0_, thanks to [@howardh](https://github.com/howardh))
 - [x] Remove `routes`. Now all requests are redirected to `remote_url` (_v2.0.0_)
 - [x] Remove support for redirections to different remote paths (_v1.0.0_)
 - [x] Support querystrings (_v0.0.9_)
