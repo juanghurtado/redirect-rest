@@ -1,6 +1,6 @@
 # redirect-rest
 
-Redirect REST requests to another server, so you can develop your Javascript app without having to launch the backend server on your machine or worry about [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
+Redirect REST requests to other servers, so you can develop your Javascript app without having to launch the backend server on your machine or worry about [CORS](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
 
 ## Getting Started
 
@@ -18,27 +18,45 @@ Inside this JSON file you can have this options:
 
 - `public_path`: Path of the assets that will be published on the HTTP server launched by `redirectrest`. Defaults to: `./`
 - `html_extensions`: Array of file extensions which will be treated as `text/html` (just in case you are required to have an HTML file with backend extension: PHP, JSP…). Defaults to: `["jsp", "php", "html"]`
-- `remote_url`: Base URL of the remote server, where the local requests will be redirected. Required.
+- `redirection_rules`: array that contains the redirection rules to redirect to one or many remote servers. Required.
+                       Each item in the array is formed by:
+					   - `path`: path used in the request in order to redirect to the remote server. Required.
+					   - `remote_url`: Base URL of the remote server, where the local requests will be redirected. Required.
+					   - `proxy`: Proxy to be used to make remote server requests. Optional.
+				   
 - `port`: Local server port
-- `proxy`: Proxy to be used to make remote server requests
 - `livereload`: Make use of LiveReload to refresh the browser on local changes
 - `livereloadPort`: Port to be used with LiveReload
 
-For example: Imagine you have a JS app and a REST API service on `http://example.com/api/`. Your `.redirect-rest.json` file would be:
+For example: Imagine you have a JS app and two REST API services on `http://example.com/api/` and `http://anotherexample.com/api/`. Your `.redirect-rest.json` file would be:
 
 ```json
 {
   "html_extensions" : ["aspx", "php", "jsp"],
   "public_path" : "./",
-  "remote_url" : "http://example.com/api"
+  "redirection_rules" : [
+               {
+                 "path": "/example",
+                 "remote_url": "http://example.com/api"
+               },
+			   {
+                 "path": "/anotherExample",
+                 "remote_url": "http://anotherExample.com/api"
+               }
+			   ]
 }
 ```
 
 This way you'll have your JS app published under `http://localhost:4242/`, and requests will be redirected as follows:
 
-- `http://localhost:4242/users` redirects to: `http://example.com/api/users`
-- `http://localhost:4242/roles` redirects to: `http://example.com/api/roles`
-- `http://localhost:4242/whatever` redirects to: `http://example.com/api/whatever`
+- `http://localhost:4242/example/users` redirects to: `http://example.com/api/users`
+- `http://localhost:4242/example/roles` redirects to: `http://example.com/api/roles`
+- `http://localhost:4242/exmaple/whatever` redirects to: `http://example.com/api/whatever`
+
+- `http://localhost:4242/anotherexample/clients` redirects to: `http://anotherexample.com/api/clients`
+- `http://localhost:4242/anoherexample/products` redirects to: `http://anotherexample.com/api/products`
+- `http://localhost:4242/anotherexample/whatever` redirects to: `http://anotherexample.com/api/whatever`
+
 
 ASP.NET, PHP and JSP files will be treated as `text/html`.
 
